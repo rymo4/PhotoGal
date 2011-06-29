@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
   
   attr_accessible :first_name, :last_name, :email, :class, :college_id , :password, :password_confirmation
+  
+  has_many :photos
+  
   validates :first_name, :presence => true, :length   => { :maximum => 30 }
   validates :last_name, :presence => true, :length   => { :maximum => 30 }
   validates :email, :presence => true,
@@ -11,14 +14,15 @@ class User < ActiveRecord::Base
   validates :class, :presence => true
   validates :college_id, :presence => true
   validates :password, :presence     => true,
-                         :confirmation => true,
-                         :length       => { :within => 6..40 }
-  
-  
-  
-  
+                       :confirmation => true,
+                       :length       => { :within => 6..40 }
   
   before_save :encrypt_password
+  before_save :downcase_email
+  
+  def downcase_email
+    self.email.downcase!
+  end
 
    # Return true if the user's password matches the submitted password.
   def has_password?(submitted_password)

@@ -1,5 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-<p>Sign Up!</p>
+<% if signed_in?%>
+	<%= render 'shared/collegeusers'%>
+<% else%>
+	<h1> Welcome to Off College Walk!</h1>
+	
+	<%= link_to 'Please Sign Up!', signup_path, :class => "signup_button" %>
+	
+<% end %>

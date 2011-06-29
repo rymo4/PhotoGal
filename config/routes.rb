@@ -1,7 +1,7 @@
 Photogal::Application.routes.draw do
-  
+  #resources :pages
   resources :users
-  resources :photos
+  resources :photos, :only => [:create, :destroy]
   resources :sessions, :only => [:new, :create, :destroy]
   
   root :to => 'pages#home'
@@ -9,12 +9,14 @@ Photogal::Application.routes.draw do
   get "pages/home"
   get "pages/contact"
   get "pages/about"
+  get "sessions/new"
   
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  match '/upload', :to => 'photos#new'
   
 
   # The priority is based upon order of creation:

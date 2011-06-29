@@ -89,7 +89,8 @@ p {
       min-width:600px;    /* Minimum width of layout - remove line if not required */
 						/* The min-width property does not work in old versions of Internet Explorer */
 	font-size:90%;
-	min-height: 100%;
+	
+	
   }
 a {
   	color:#369;
@@ -224,6 +225,7 @@ img {
 	position:relative;
 	left:200px;
       background:#E9F2F9;
+
   }
   .leftmenu .col1wrap {
     float:right;
@@ -231,18 +233,21 @@ img {
     position:relative;
     right:200px;
     padding-bottom:1em;
+
 }
 .leftmenu .col1 {
       margin:0 15px 0 215px;
     position:relative;
     right:100%;
-    overflow:hidden;
+    overflow:hidden
+		min-height: 100%;
 }
   .leftmenu .col2 {
       float:left;
       width:170px;
       position:relative;
       right:185px;
+min-height: 100%;
   }
 /* Footer styles */
 #footer {
@@ -251,6 +256,7 @@ img {
       width:100%;
 	border-top:3px solid #6FB7E9;;
 	background: #B2D1E5;
+	
   }
   #footer p {
       padding:10px;
