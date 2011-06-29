@@ -134,6 +134,7 @@ img {
 	margin-left: 200px;
 	margin-top: 20px;
 	
+	
 }
 
 
@@ -147,7 +148,7 @@ img {
 			
   }
 #header {
-	border-bottom:1px solid #000;
+	bor/der-bottom:3px solid #6FB7E9;
 	
 }
 #header p,
@@ -247,7 +248,7 @@ img {
       clear:both;
       float:left;
       width:100%;
-	border-top:1px solid #000;
+	border-top:3px solid #6FB7E9;;
 	background: #B2D1E5;
   }
   #footer p {

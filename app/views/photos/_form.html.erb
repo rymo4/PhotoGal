@@ -1,0 +1,61 @@
+<%= form_for(@photo) do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br />
+    <%= f.text_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :bought %><br />
+    <%= f.check_box :bought %>
+  </div>
+  <div class="field">
+    <%= f.label :camera %><br />
+    <%= f.text_field :camera %>
+  </div>
+  <div class="field">
+    <%= f.label :aperature %><br />
+    <%= f.text_field :aperature %>
+  </div>
+  <div class="field">
+    <%= f.label :shutter %><br />
+    <%= f.text_field :shutter %>
+  </div>
+  <div class="field">
+    <%= f.label :iso %><br />
+    <%= f.text_field :iso %>
+  </div>
+  <div class="field">
+    <%= f.label :time_taken %><br />
+    <%= f.text_field :time_taken %>
+  </div>
+  <div class="field">
+    <%= f.label :file_size %><br />
+    <%= f.text_field :file_size %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

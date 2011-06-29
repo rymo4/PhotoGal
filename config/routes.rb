@@ -1,5 +1,9 @@
 Photogal::Application.routes.draw do
   
+  resources :users
+
+  resources :photos
+
   root :to => 'pages#home'
   
   get "pages/home"
