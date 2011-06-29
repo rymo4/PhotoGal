@@ -1,21 +1,9 @@
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </div>
-  <div class="field">
+	<div class="field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name %>
   </div>
@@ -23,15 +11,21 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+	<div class="field">
+	<%= f.select :college_id, [['Columbia University', 1], ['MIT', 2]]%>
+	</div>
+	<div class="field">
+	<%= f.select :year, [['2010', 2010], ['2011', 2011], ['2012', 2012], ['2013', 2013], ['2014', 2014], ['2015', 2015]]%>
+	</div>
   <div class="field">
-    <%= f.label :college_id %><br />
-    <%= f.text_field :college_id %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :class %><br />
-    <%= f.text_field :class %>
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Sign up" %>
   </div>
 <% end %>

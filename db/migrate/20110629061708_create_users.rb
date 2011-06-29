@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.integer :college_id
-      t.integer :class
+      t.integer :year
 
       t.timestamps
     end

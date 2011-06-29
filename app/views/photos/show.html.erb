@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<%= image_tag @photo.image_url.to_s %>
+<%= image_tag @photo.image_url(:thumb).to_s %>
 <p>
   <b>Title:</b>
   <%= @photo.title %>
@@ -45,10 +46,7 @@
   <%= @photo.iso %>
 </p>
 
-<p>
-  <b>Time taken:</b>
-  <%= @photo.time_taken %>
-</p>
+
 
 <p>
   <b>File size:</b>

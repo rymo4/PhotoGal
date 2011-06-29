@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110629072139) do
+ActiveRecord::Schema.define(:version => 20110629082234) do
 
   create_table "photos", :force => true do |t|
     t.string   "title"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(:version => 20110629072139) do
     t.float    "aperature"
     t.string   "shutter"
     t.integer  "iso"
-    t.datetime "time_taken"
     t.integer  "file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "users", :force => true do |t|
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20110629072139) do
     t.string   "last_name"
     t.string   "email"
     t.integer  "college_id"
-    t.integer  "class"
+    t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "encrypted_password"
