@@ -6,14 +6,18 @@ class User < ActiveRecord::Base
   
   has_many :photos
   belongs_to :college
+  belongs_to :dorm
+  belongs_to :school
   
   validates :first_name, :presence => true, :length   => { :maximum => 30 }
   validates :last_name, :presence => true, :length   => { :maximum => 30 }
   validates :email, :presence => true,
-                      :format     => { :with => email_regex },
-                      :uniqueness => true
+                    :format     => { :with => email_regex },
+                    :uniqueness => true
   validates :class, :presence => true
   validates :college_id, :presence => true
+  validates :dorm_id, :presence => true
+  validates :year, :presence => true
   validates :password, :presence     => true,
                        :confirmation => true,
                        :length       => { :within => 6..40 }
