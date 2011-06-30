@@ -5,7 +5,7 @@ namespace :db do
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
     make_user
-    make_colleges
+    make_colleges_with_schools
   end
 end
   
@@ -23,10 +23,12 @@ end
 
 
 
-def make_colleges   
+def make_colleges_with_schools
 
-  College.create!(:name => "Columbia University", :schools=>'CC, SEAS', 
+  College.create!(:name => "Columbia University",  
     :dorms =>'Carmen, Wallach, John Jay, Watt, East Campus, Wein, Furnald, Schipiro, Hartley, Harmony, Ruggles, McBain, Hogan, Off Campus')
+  School.create!(:name=>'SEAS', :college_id=>College.find_by_name("Columbia University"))
+  School.create!(:name=>'CC', :college_id=>College.find_by_name("Columbia University"))
      
 end
 

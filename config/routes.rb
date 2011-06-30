@@ -1,4 +1,6 @@
 Photogal::Application.routes.draw do
+  get "schools/new"
+
   get "colleges/new"
 
   #resources :pages

@@ -1,0 +1,25 @@
+var schools = new Array();
+<% for school in @schools -%>
+  schools.push(new Array(<%= school.college_id %>, '<%= school.name %>', <%= College.id %>));
+<% end -%>
+
+function collegeSelected() {
+  college_id = $('person_college_id').getValue();
+  options = $('person_school_id').options;
+  options.length = 1;
+  schools.each(function(school) {
+    if (school[0] == country_id) {
+      options[options.length] = new Option(school[1], school[2]);
+    }
+  });
+  if (options.length == 1) {
+    $('school_field').hide();
+  } else {
+    $('school_field').show();
+  }
+}
+
+document.observe('dom:loaded', function() {
+  collegeSelected();
+  $('person_college_id').observe('change', collegeSelected);
+});
