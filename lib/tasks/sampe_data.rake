@@ -15,7 +15,8 @@ def make_user
                          :email => "RydTheMoodster@gmail.com",
                          :password => "password",
                          :password_confirmation => "password",
-                         :college_id => 1 
+                         :college_id => 1,
+                         :year => 2014 
                          )
     admin.toggle!(:admin)
 end
