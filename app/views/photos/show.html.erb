@@ -1,58 +1,22 @@
 <p id="notice"><%= notice %></p>
+<center>
+<h1><%= @photo.title %></h1>
 <%= image_tag @photo.image_url.to_s %>
-<%= image_tag @photo.image_url(:thumb).to_s %>
-<p>
-  <b>Title:</b>
-  <%= @photo.title %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @photo.user_id %>
-</p>
-
-<p>
-  <b>Width:</b>
-  <%= @photo.width %>
-</p>
-
-<p>
-  <b>Height:</b>
-  <%= @photo.height %>
-</p>
-
-<p>
-  <b>Bought:</b>
-  <%= @photo.bought %>
-</p>
-
-<p>
-  <b>Camera:</b>
-  <%= @photo.camera %>
-</p>
-
-<p>
-  <b>Aperature:</b>
-  <%= @photo.aperature %>
-</p>
-
-<p>
-  <b>Shutter:</b>
-  <%= @photo.shutter %>
-</p>
-
-<p>
-  <b>Iso:</b>
-  <%= @photo.iso %>
-</p>
 
 
 
 <p>
-  <b>File size:</b>
-  <%= @photo.file_size %>
+  Taken by <%= link_to User.find(@photo.user_id).first_name, User.find(@photo.user_id) %>.
 </p>
 
+
+  
+
+<p>
+  
+  <%= @photo.comment %>
+</p>
+</center>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

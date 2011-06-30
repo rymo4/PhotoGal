@@ -1,7 +1,10 @@
 Photogal::Application.routes.draw do
+  get "colleges/new"
+
   #resources :pages
-  resources :users
-  resources :photos, :only => [:create, :destroy]
+  resources :users #do
+    resources :photos#, :only => [:create, :destroy]
+ # end
   resources :sessions, :only => [:new, :create, :destroy]
   
   root :to => 'pages#home'
@@ -10,6 +13,9 @@ Photogal::Application.routes.draw do
   get "pages/contact"
   get "pages/about"
   get "sessions/new"
+  get "sessions/destroy"
+  get "photos/upload"
+  get "photos/index"
   
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'

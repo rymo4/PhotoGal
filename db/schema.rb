@@ -10,18 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110629082234) do
+ActiveRecord::Schema.define(:version => 20110630024116) do
+
+  create_table "colleges", :force => true do |t|
+    t.string   "name"
+    t.string   "dorms"
+    t.string   "schools"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "photos", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
     t.integer  "width"
     t.integer  "height"
-    t.boolean  "bought"
     t.string   "camera"
-    t.float    "aperature"
-    t.string   "shutter"
-    t.integer  "iso"
+    t.string   "comment"
     t.integer  "file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20110629082234) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.boolean  "admin",              :default => false
   end
 
 end

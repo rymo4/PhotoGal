@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :class, :college_id , :password, :password_confirmation
   
   has_many :photos
+  belongs_to :college
   
   validates :first_name, :presence => true, :length   => { :maximum => 30 }
   validates :last_name, :presence => true, :length   => { :maximum => 30 }

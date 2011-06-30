@@ -35,14 +35,15 @@
         </div>
         <div class="col2">
             <!-- Side Column start -->
+					<% if signed_in?%>
             <h1>Sort By:</h1>
 						 <ul>
 					        <li><%=link_to 'College', '#'%></li>
 					        <li><%=link_to 'Engineering', '#'%></li>
 					        <li><%=link_to 'Buisness', '#'%></li>
 									<li><%=link_to 'Favorites', '#' %></li>
-
 					    </ul>
+					<%end%>
 
 
 						<!-- Side Column end -->

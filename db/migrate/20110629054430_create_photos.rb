@@ -5,12 +5,8 @@ class CreatePhotos < ActiveRecord::Migration
       t.integer :user_id
       t.integer :width
       t.integer :height
-      t.boolean :bought
       t.string :camera
-      t.float :aperature
-      t.string :shutter
-      t.integer :iso
-      
+      t.string :comment
       t.integer :file_size
 
       t.timestamps
