@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.xml
+ 
+  
   def index
     @photos = Photo.all
 

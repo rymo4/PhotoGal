@@ -1,33 +1,10 @@
 <p id="notice"><%= notice %></p>
+<center>
+	<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+	<h3><%= college %>, <%= School.find(@user.school_id).name %> <%= @user.year %></h3>
+</center>
 
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>College:</b>
-  <%= college %>
-</p>
-<p>
-  <b>School:</b>
-  <%= @user.school_id %>
-</p>
-<p>
-  <b>Year:</b>
-  <%= @user.year %>
-</p>
-
+<%= render 'shared/index' %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

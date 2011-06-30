@@ -1,22 +1,23 @@
 <h1>Listing photos</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Photo</th>
-    
-    <th>Comment</th>
-    
-  </tr>
+  
 
-<% Photo.all.each do |photo| %>
+<% @photos.each do |photo| %>
+	<tr>
+		<th><%= photo.title %></th>
+	</tr>
   <tr>
-    <td><%= photo.title %></td>
-    <td><%= image_tag photo.image_url(:thumb).to_s %></td>
-    <td><%= photo.comment %></td>
-    <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', photo, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+    <td><center><%= link_to image_tag (photo.image_url(:thumb).to_s), photo %></center></td>
+	</tr>
+	<td>
+		<%if photo.user_id==current_user.id%>
+			<%= link_to 'Edit', edit_photo_path(photo) %> 
+			<%= link_to 'Delete', photo, :confirm => 'Are you sure?', :method => :delete %></td>
+		<%end%>
+  </td>
+   
   </tr>
 <% end %>
 </table>

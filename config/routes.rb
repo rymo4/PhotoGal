@@ -7,8 +7,8 @@ Photogal::Application.routes.draw do
 
   #resources :pages
   resources :users #do
-    resources :photos#, :only => [:create, :destroy]
- # end
+  resources :colleges 
+  resources :photos
   resources :sessions, :only => [:new, :create, :destroy]
   
   root :to => 'pages#home'
