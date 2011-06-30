@@ -15,7 +15,7 @@ def make_user
                          :email => "RydTheMoodster@gmail.com",
                          :password => "password",
                          :password_confirmation => "password",
-                         :college_id => 1,
+                         :college_id => College.find_by_name('Columbia University').id,
                          :year => 2014,
                          :school_id => School.find_by_name('SEAS').id,
                          :dorm_id => Dorm.find_by_name('Watt').id 
@@ -28,6 +28,7 @@ end
 def make_colleges_with_schools_and_dorms
 
   College.create!(:name => "Columbia University")
+  
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Carman")
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Wallach") 
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"John Jay") 
@@ -39,15 +40,15 @@ def make_colleges_with_schools_and_dorms
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Hartley")
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Harmony") 
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Ruggles") 
-  Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"McBain")  
-  Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"McBain")  
+  Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"McBain")    
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Hogan") 
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"47 Claremont")
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Nussbaum")
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Broadway")
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"River") 
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Woodbridge") 
-  Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Off Campus Housing")   
+  Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Off Campus Housing")  
+   
   School.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>'SEAS')
   School.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>'CC')
   School.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>'GS')

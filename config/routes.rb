@@ -7,7 +7,9 @@ Photogal::Application.routes.draw do
 
   #resources :pages
   resources :users #do
-  resources :colleges 
+  resources :colleges
+  resources :schools
+  resources :dorms
   resources :photos
   resources :sessions, :only => [:new, :create, :destroy]
   
