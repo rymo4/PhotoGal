@@ -30,6 +30,9 @@
         <div class="col1wrap">
             <div class="col1">
                 <!-- Main Column start -->
+								<% flash.each do |key, value| %>
+				          <div class="flash <%= key %>"><%= value %></div>
+				        <% end %>
                 <%= yield %>
 								<!-- Main Column end -->
             </div>

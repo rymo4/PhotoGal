@@ -213,6 +213,7 @@ img {
     clear:both;
     float:left;
       width:100%;			/* width of whole page */
+
 	overflow:hidden;	/* This chops off any overhanging divs */
 }
 /* 2 column left menu settings */
@@ -233,21 +234,21 @@ img {
     position:relative;
     right:200px;
     padding-bottom:1em;
-
+		
 }
 .leftmenu .col1 {
       margin:0 15px 0 215px;
     position:relative;
     right:100%;
-    overflow:hidden
-		min-height: 100%;
+    overflow:hidden;
+		
 }
   .leftmenu .col2 {
       float:left;
       width:170px;
       position:relative;
       right:185px;
-min-height: 100%;
+
   }
 /* Footer styles */
 #footer {
@@ -284,4 +285,17 @@ a:hover {
 a:visited {
   color: #004400;
 }
+
+
+
+/* ALERTS */ 
+.error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd; margin-top: 15px;}
+.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
+.info {background:#d5edf8;color:#205791;border-color:#92cae4;}
+.error a, .alert a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+.info a {color:#205791;} 
 
