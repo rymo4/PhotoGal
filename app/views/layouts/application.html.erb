@@ -38,10 +38,11 @@
 					<% if signed_in?%>
             <h1>Sort By:</h1>
 						 <ul>
-					        <li><%=link_to 'College', '#'%></li>
-					        <li><%=link_to 'Engineering', '#'%></li>
-					        <li><%=link_to 'Buisness', '#'%></li>
-									<li><%=link_to 'Favorites', '#' %></li>
+									<li><%=link_to 'Favorites', '#'%></li>
+					        <li><%=link_to college, '#'%></li>
+									<% schools.each do |school|%>
+					        <li><%=link_to school, '#'%></li>
+					        <% end %>
 					    </ul>
 					<%end%>
 
