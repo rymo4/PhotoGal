@@ -44,11 +44,11 @@
 						 <ul>
 									<li><%=link_to 'Favorites', '#'%></li>
 					        <li><%=link_to college, root_path%></li>
-									<% schools.each do |school_name|%>
-					        <li><%=link_to school_name, School.find_by_name(school_name)%></li>
+									<% schools.each do |school_id|%>
+					        	<li><%=link_to School.find(school_id).name, School.find(school_id)%></li>
 					        <% end %>
 									<% dorms.each do |dorm_id|%>
-					        <li><%=link_to Dorm.find(dorm_id).name, Dorm.find(dorm_id)%></li>
+					        	<li><%=link_to Dorm.find(dorm_id).name, Dorm.find(dorm_id)%></li>
 					        <% end %>
 					    </ul>
 					<%end%>

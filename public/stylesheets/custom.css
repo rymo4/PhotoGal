@@ -257,7 +257,7 @@ img {
       width:100%;
 	border-top:3px solid #6FB7E9;;
 	background: #B2D1E5;
-	position: absolute;
+	position: fixed; /* CHANGE IF I WANT TO LATER*/
 	bottom: 0;
 	
   }
