@@ -1,31 +1,37 @@
-<%= form_for([@user, @photo], :html => {:multipart => true }) do |f| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+<% if signed_in?%>	
+	<h1>New photo</h1>
 
-      <ul>
-      <% @photo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_field :comment %>
-  </div>
-	<div class="field">
-    <%= f.file_field :image%>
-  </div>
-	<div class="field">
-	<%= f.label :remote_image_url, "or image URL" %><br />
-	    <%= f.text_field :remote_image_url %>
-	</div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+	<%= form_for([@user, @photo], :html => {:multipart => true }) do |f| %>
+	  <% if @photo.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+	      <ul>
+	      <% @photo.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	  <div class="field">
+	    <%= f.label :title %><br />
+	    <%= f.text_field :title %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :comment %><br />
+	    <%= f.text_field :comment %>
+	  </div>
+		<div class="field">
+	    <%= f.file_field :image%>
+	  </div>
+		<div class="field">
+		<%= f.label :remote_image_url, "or image URL" %><br />
+		    <%= f.text_field :remote_image_url %>
+		</div>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	<% end %>
+<%else%>
+<%= render 'shared/signin'%>
+<%end%>

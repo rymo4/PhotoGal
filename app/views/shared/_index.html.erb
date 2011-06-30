@@ -1,26 +1,38 @@
-<h1>Listing photos</h1>
+<% if signed_in?%>
 
-<table>
+		<h1>Listing photos</h1>
+
+		
   
-
-<% @photos.each do |photo| %>
-	<tr>
-		<th><%= photo.title %></th>
-	</tr>
-  <tr>
+	<% unless @photos.nil?%>
+		<% @photos.each do |photo| %>
+		<table>
+			<tr>
+				<th><%= photo.title %></th>
+			</tr>
+		  <tr>
     
-    <td><center><%= link_to image_tag (photo.image_url(:thumb).to_s), photo %></center></td>
-	</tr>
-	<td>
-		<%if photo.user_id==current_user.id%>
-			<%= link_to 'Edit', edit_photo_path(photo) %> 
-			<%= link_to 'Delete', photo, :confirm => 'Are you sure?', :method => :delete %></td>
-		<%end%>
-  </td>
+		    <td><center><%= link_to image_tag (photo.image_url(:thumb).to_s), photo %></center></td>
+			</tr>
+			<tr>
+			<td>
+				<%if photo.user_id==current_user.id%>
+					<%= link_to 'Edit', edit_photo_path(photo) %> 
+					<%= link_to 'Delete', photo, :confirm => 'Are you sure?', :method => :delete %></td>
+				<%end%>
+		  </td>
    
-  </tr>
-<% end %>
-</table>
+		  </tr>
+		</table>
+		<% end %>
+		
 
-<br />
+		<br />
+		<%else%>
+		<h1>There are no photos yet!</h1>
+		<%end%>
+<%else%>
+<%= render 'shared/signin'%>
+<%end%>
+
 

@@ -3,8 +3,10 @@ class DormsController < ApplicationController
   end
   
   def show
+    if signed_in?
     @dorm=Dorm.find(params[:id])
     @photos=Dorm.find(@dorm.id).photos
+    end
   end
 
 end
