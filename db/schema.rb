@@ -10,12 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110630053601) do
+ActiveRecord::Schema.define(:version => 20110630062539) do
 
   create_table "colleges", :force => true do |t|
     t.string   "name"
-    t.string   "dorms"
-    t.string   "schools"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dorms", :force => true do |t|
+    t.integer  "college_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,7 +56,8 @@ ActiveRecord::Schema.define(:version => 20110630053601) do
     t.string   "encrypted_password"
     t.string   "salt"
     t.boolean  "admin",              :default => false
-    t.string   "school"
+    t.integer  "school_id"
+    t.integer  "dorm_id"
   end
 
 end

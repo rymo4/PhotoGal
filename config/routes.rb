@@ -1,4 +1,6 @@
 Photogal::Application.routes.draw do
+  get "dorms/new"
+
   get "schools/new"
 
   get "colleges/new"

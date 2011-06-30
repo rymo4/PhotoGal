@@ -6,13 +6,14 @@
 	<%= f.text_field :first_name %> 
 	 <%= f.text_field :last_name %> 
 	and I'm 
-	<%= f.collection_select :college_id, College.all, :id, :name%>
-	 <p id="school_field">
-	  <label for="person_school_id"></label>
-	  <%= f.collection_select :school, School.all, :id, :name, :prompt => "Select a School" %>
-	</p>
+	<%= f.collection_select :college_id, College.all, :id, :name, :prompt => "Select a College"%>
+	 
+	  
+	
 	 class of 
-	<%= f.select :year, [['2010', 2010], ['2011', 2011], ['2012', 2012], ['2013', 2013], ['2014', 2014], ['2015', 2015]]%>. 
+	<%= f.select :year, [['2010', 2010], ['2011', 2011], ['2012', 2012], ['2013', 2013], ['2014', 2014], ['2015', 2015]]%>. I'm in 
+	<%= f.collection_select :school_id, School.all, :id, :name, :prompt => "Select a School" %> and live in 
+	<%= f.collection_select :dorm_id, Dorm.all, :id, :name, :prompt => "Select a Dorm" %>. 
 		I hear all sorts of good things about you, so I really want to get to know you better. What do you think?
 		If you want to reach me just shoot me an email at 
 		<%= f.text_field :email %> 

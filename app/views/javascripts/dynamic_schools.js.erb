@@ -8,7 +8,7 @@ function collegeSelected() {
   options = $('person_school_id').options;
   options.length = 1;
   schools.each(function(school) {
-    if (school[0] == country_id) {
+    if (school[0] == college_id) {
       options[options.length] = new Option(school[1], school[2]);
     }
   });

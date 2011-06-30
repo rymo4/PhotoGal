@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   attr_accessor :password
   
-  attr_accessible :first_name, :last_name, :email, :class, :college_id , :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :email, :college_id , :password, :password_confirmation, :year, :school_id, :dorm_id
   
   has_many :photos
   belongs_to :college

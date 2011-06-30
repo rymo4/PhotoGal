@@ -1,0 +1,25 @@
+var dorms = new Array();
+<% for dorm in @dorms -%>
+  dorms.push(new Array(<%= dorm.college_id %>, '<%= dorm.name %>', <%= College.id %>));
+<% end -%>
+
+function collegeSelected() {
+  college_id = $('person_dorm_id').getValue();
+  options = $('person_dorm_id').options;
+  options.length = 1;
+  dorms.each(function(dorm) {
+    if (dorm[0] == college_id) {
+      options[options.length] = new Option(dorm[1], dorm[2]);
+    }
+  });
+  if (options.length == 1) {
+    $('dorm_field').hide();
+  } else {
+    $('dorm_field').show();
+  }
+}
+
+document.observe('dom:loaded', function() {
+  collegeSelected();
+  $('person_college_id').observe('change', collegeSelected);
+});
