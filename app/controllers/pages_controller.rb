@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     if signed_in?
-    @photos=College.find(current_user.college_id).photos.page(params[:page]).per(1)
+    @photos=College.find(current_user.college_id).photos.order("created_at DESC").page(params[:page]).per(20)
     end
   end
 

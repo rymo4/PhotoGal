@@ -18,9 +18,12 @@
   <%= @photo.comment %>
 </p>
 </center>
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+	<%if @photo.user_id==current_user.id%>
+		<%= link_to 'Edit', edit_photo_path(@photo) %> 
+		<%= link_to 'Delete', @photo, :confirm => 'Are you sure?', :method => :delete %>
+	<%end%>
+	
 <%else%>
 <%= render 'shared/signin'%>
 <%end%>
+
