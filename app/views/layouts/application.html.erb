@@ -1,67 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Photogal</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-	<%= yield(:head)%>
-  <%= csrf_meta_tag %>
-</head>
+	<head>
+	  <title>Photogal</title>
+	  <%= stylesheet_link_tag :all %>
+	  <%= javascript_include_tag :defaults %>
+		<%= yield(:head)%>
+	  <%= csrf_meta_tag %>
+	</head>
 
-<body>
+	<body>
+		<div id="header">
+		  <%= render 'layouts/header' %>
+		</div>
 
-<div id="header">
-  <div id="nav">
-    <ul>
-        <li><%=link_to 'Home', root_path%></li>
-				<% if signed_in?%>
-        <li><%=link_to 'Upload', upload_path%></li>
-        <li><%=link_to 'Sign Out', signout_path, :method => :delete %></li>
-				<% else %>
-				<li><%=link_to 'Sign In', signin_path%></li>
-				<% end %>
-        
-    </ul>
-	</div>
-</div>
-
-<div class="colmask leftmenu">
-    <div class="colright">
-        <div class="col1wrap">
-            <div class="col1">
-                <!-- Main Column start -->
-								<% flash.each do |key, value| %>
-				          <div class="flash <%= key %>"><%= value %></div>
-				        <% end %>
-                <%= yield %>
-								<!-- Main Column end -->
-            </div>
-        </div>
-        <div class="col2">
-            <!-- Side Column start -->
-					<% if signed_in?%>
-            <h1>Sort By:</h1>
-						 <ul>
-									<li><%=link_to 'Favorites', '#'%></li>
-					        <li><%=link_to college, root_path%></li>
-									<% schools.each do |school_id|%>
-					        	<li><%=link_to School.find(school_id).name, School.find(school_id)%></li>
-					        <% end %>
-									<% dorms.each do |dorm_id|%>
-					        	<li><%=link_to Dorm.find(dorm_id).name, Dorm.find(dorm_id)%></li>
-					        <% end %>
-					    </ul>
-					<%end%>
-
-
-						<!-- Side Column end -->
-
-        </div>
-    </div>
-</div>
-<div id="footer">
-    <p>Here is a footer. Put something useful here.
-
-</div>
-</body>
+		<div class="colmask leftmenu">
+		    <div class="colright">
+		        <div class="col1wrap">
+		            <div class="col1">
+		                <!-- Main Column start -->
+										<% flash.each do |key, value| %>
+						          <div class="flash <%= key %>"><%= value %></div>
+						        <% end %>
+		                <%= yield %>
+										<!-- Main Column end -->
+		            </div>
+		        </div>
+		        <div class="col2">
+							<%= render 'layouts/sidebar' %>
+		        </div>
+		    </div>
+		</div>
+		
+		<div id="footer">
+		    <%= render 'layouts/footer' %>
+		</div>
+	</body>
 </html>

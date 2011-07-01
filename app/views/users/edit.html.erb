@@ -1,6 +1,29 @@
 <h1>Editing user</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= form_for(@user) do |f| %>
+<p>
+
+	First Name: <%= f.text_field :first_name %> <br>
+	Last Name: <%= f.text_field :last_name %> <br>
+	Year: <%= f.select :year, [['2010', 2010], ['2011', 2011], ['2012', 2012], ['2013', 2013], ['2014', 2014], ['2015', 2015]]%> <br>
+	School: <%= f.collection_select :school_id, School.all, :id, :name, :prompt => "Select a School" %> <br>
+	Dorm: <%= f.collection_select :dorm_id, Dorm.all, :id, :name, :prompt => "Select a Dorm" %>. <br>
+		
+	Email: <%= f.text_field :email %> <br>
+	
+	Password: <%= f.password_field :password %> <br>
+ 
+	Password Confirmation: <%= f.password_field :password_confirmation %><br>
+
+  
+	
+  
+	
+	
+  
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
