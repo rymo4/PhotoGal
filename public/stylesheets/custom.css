@@ -18,9 +18,7 @@
   border:2px solid black;
 	backgrou/nd: #333;
 }
-.right {
-	float: right;
-}
+
 .round {
  		-webkit-border-radius: 10px;
 		-khtml-border-radius: 10px;	
@@ -75,7 +73,12 @@ p {
 	color: #FFFFFF;
 }
 
-/*layout*/
+/* PICS */
+table.listedpic {
+	float: left;
+	padding: 10px 15px 5px 15px;
+}
+
 
 
  /* <!-- */
@@ -89,7 +92,7 @@ p {
       min-width:600px;    /* Minimum width of layout - remove line if not required */
 						/* The min-width property does not work in old versions of Internet Explorer */
 	font-size:90%;
-	
+
 	
   }
 a {
@@ -206,6 +209,7 @@ img {
 	margin:0;
 	padding:6px 15px !important;
 	text-align:right;
+	
 }
 /* column container */
 .colmask {

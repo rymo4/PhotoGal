@@ -5,7 +5,8 @@ class DormsController < ApplicationController
   def show
     if signed_in?
     @dorm=Dorm.find(params[:id])
-    @photos=Dorm.find(@dorm.id).photos
+    @photos=@dorm.photos.page(params[:page]).per(1)
+  
     end
   end
 

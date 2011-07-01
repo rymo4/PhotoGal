@@ -5,11 +5,12 @@ namespace :db do
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
     make_colleges_with_schools_and_dorms
-    make_user
+    make_users
+    make_photos
   end
 end
   
-def make_user
+def make_users
     admin = User.create!(:first_name => "Ryder",
                          :last_name => "Moody",
                          :email => "RydTheMoodster@gmail.com",
@@ -21,6 +22,17 @@ def make_user
                          :dorm_id => Dorm.find_by_name('Watt').id 
                          )
     admin.toggle!(:admin)
+    User.create!(:first_name => "Other",
+                 :last_name => "User",
+                 :email => "email@gmail.com",
+                 :password => "password",
+                 :password_confirmation => "password",
+                 :college_id => College.find_by_name('Columbia University').id,
+                 :year => 2013,
+                 :school_id => School.find_by_name('CC').id,
+                 :dorm_id => Dorm.find_by_name('McBain').id 
+                 )
+      
 end
 
 
@@ -55,6 +67,13 @@ def make_colleges_with_schools_and_dorms
   School.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>'JTS')
      
 end
+
+def make_photos
+
+   #Photo.create!(:user_id=>1, :comment=> "Look at what happened!", :image=>ImageUploader.new.store!(File.open("/Users/juliemoody/Desktop/lost_EWW.jpg")))
+  
+end
+
 
 
 

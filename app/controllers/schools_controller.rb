@@ -5,7 +5,7 @@ class SchoolsController < ApplicationController
 
   def show
     @school=School.find(params[:id])
-    @photos=School.find(@school.id).photos
+    @photos=@school.photos.page(params[:page]).per(3)
   end
 end
 
