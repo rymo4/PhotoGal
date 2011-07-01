@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @photos=@user.photos.page(params[:page]).per(20)
+    @list="My"
     
   end
 

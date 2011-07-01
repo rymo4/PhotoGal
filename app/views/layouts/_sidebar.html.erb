@@ -1,6 +1,7 @@
 <% if signed_in?%>
-  <h1>Sort By:</h1>
-	 <ul>
+  <h2 class="sidebar">Collages</h2>
+	 <ul class="sidebar">
+				<p>
 				<li><%=link_to 'Favorites', '#'%></li>
         <li><%=link_to college, root_path%></li>
 				<% schools.each do |school_id|%>
@@ -9,5 +10,6 @@
 				<% dorms.each do |dorm_id|%>
         	<li><%=link_to Dorm.find(dorm_id).name, Dorm.find(dorm_id)%></li>
         <% end %>
+				</p>
     </ul>
 <%end%>
