@@ -17,6 +17,11 @@ module ApplicationHelper
       all_dorms_for_college=College.find(current_user.college_id).dorms
     end
   end
+  def tags
+    if signed_in?
+      all_tags_for_college=Tag.all
+    end
+  end
 
   
   def javascript(*files)

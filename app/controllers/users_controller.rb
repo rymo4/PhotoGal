@@ -40,9 +40,12 @@ class UsersController < ApplicationController
      @user = User.new(params[:user])
      if @user.save
        sign_in @user
-       flash[:success] = "Welcome to Off College Walk!"
+       flash[:success] = "Welcome to College Collage!"
        redirect_to @user
      else
+        
+       #flash[:error] = "Fill in everything correctly!"
+       #redirect_to signup_path
        render 'new'
      end 
   end

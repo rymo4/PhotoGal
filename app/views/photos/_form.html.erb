@@ -21,13 +21,11 @@
 	    <%= f.label :comment %><br />
 	    <%= f.text_field :comment %>
 	  </div>
+		<%= f.collection_select(:tag_id, Tag.all, :id, :name, :prompt => "Tag") %>
 		<div class="field">
 	    <%= f.file_field :image%>
 	  </div>
-		<div class="field">
-		<%= f.label :remote_image_url, "or image URL" %><br />
-		    <%= f.text_field :remote_image_url %>
-		</div>
+		
 	  <div class="actions">
 	    <%= f.submit %>
 	  </div>

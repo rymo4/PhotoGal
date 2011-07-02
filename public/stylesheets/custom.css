@@ -95,20 +95,40 @@ p {
 	backgrou/nd-color: #FFFFFF;
 }
 
-
+#signup {
+	padding: 100px 20% 50px 20%;
+	
+}
+#signup p {
+	font-size: 25px;
+	line-height: 40px;
+}
+#signup_error_explanation {
+	float: left;
+}
+.signup_button {
+	padding: 15px;
+	background: #ffffff;
+	border: 2px solid #000000;
+	text-align: center;
+	position: relative;
+	
+}
 
 
  /* <!-- */
   /* General styles */
+
   body {
       margin:0;
       padding:0;
       border:0;			/* This removes the border around the viewport in old versions of IE */
       width:100%;
-      background:#fff;
+      background: #B2D1E5;
       min-width:600px;    /* Minimum width of layout - remove line if not required */
 						/* The min-width property does not work in old versions of Internet Explorer */
 	font-size:90%;
+
   }
   p {
       margin:.4em 0 .8em 0;
@@ -223,6 +243,7 @@ img {
 	overflow:hidden;	/* This chops off any overhanging divs */
 }
 /* 2 column left menu settings */
+
 .leftmenu {
     background:#3C8DC5;
 		
@@ -257,8 +278,10 @@ img {
       width:170px;
       position:relative;
       right:185px;
+		
 
   }
+
 /* Footer styles */
 #footer {
       clear:both;
@@ -266,7 +289,7 @@ img {
       width:100%;
 	border-top:3px solid #6FB7E9;;
 	background: #B2D1E5;
-	position: fixed; /* CHANGE IF I WANT TO LATER*/
+	position: relative; 
 	bottom: 0;
 	
   }

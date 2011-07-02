@@ -1,29 +1,28 @@
+
 <% javascript 'dynamic_schools'%>
 <%= form_for(@user) do |f| %>
+<% if @user.errors.any? %>
+  <div id="signup_error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this photo from being saved:</h2>
 
-<p>Dear Off College Collage, </p>
-	<p class="indent">Hi. My name is 
-	<%= f.text_field :first_name %> 
-	 <%= f.text_field :last_name %> 
-	and I'm 
-	<%= f.collection_select :college_id, College.all, :id, :name, :prompt => "Select a College"%>
-	 
-	  
-	
-	 class of 
-	<%= f.select :year, [['2010', 2010], ['2011', 2011], ['2012', 2012], ['2013', 2013], ['2014', 2014], ['2015', 2015]]%>. I'm in 
-	<%= f.collection_select :school_id, School.all, :id, :name, :prompt => "Select a School" %> and live in 
-	<%= f.collection_select :dorm_id, Dorm.all, :id, :name, :prompt => "Select a Dorm" %>. 
-		I hear all sorts of good things about you, so I really want to get to know you better. What do you think?
-		If you want to reach me just shoot me an email at 
-		<%= f.text_field :email %> 
-		and I'll get back to you! </p><br>
-		<p class="indent">-Yours.</p>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<div id="signup">
+
+<p>Dear Random Class Mate, </p>
+	<p class="indent">Hey. So I figure we should know a little bit about each other before I graduate in <%= f.select :year, [['2010', 2010], ['2011', 2011], ['2012', 2012], ['2013', 2013], ['2014', 2014], ['2015', 2015]], :prompt => "Year"%>. I'll let you know a little about me now, but you'll really get to know me when I start posting pictures. Obviously you know that I go to <%= f.collection_select :college_id, College.all, :id, :name, :prompt => "Select a College"%>, but you might not have known that I'm in <%= f.collection_select :school_id, School.all, :id, :name, :prompt => "Select a School" %>. I live in <%= f.collection_select :dorm_id, Dorm.all, :id, :name, :prompt => "Select a Dorm" %>, which is pretty great. Anyways, if you want to reach me just shoot me an email at <%= f.text_field :email, :size=> "20"  %> and I'll get back to you! </p><br>
+		<p class="indent">Sincerely, <%= f.text_field :first_name, :size=> "10" %> 
+		 <%= f.text_field :last_name, :size=> "10"  %></p>
 		
-		<p class="indent">P.S. Let me tell you a secret! Last weekend I wrote 
-		<%= f.password_field :password %> 
+		<p class="indent">P.S. Let me tell you a secret! Last weekend I sharpied 
+		<%= f.password_field :password, :size=> "15"  %> 
 		on the bathroom wall! That's right, 
-		<%= f.password_field :password_confirmation %>
+		<%= f.password_field :password_confirmation, :size=> "15"  %>
 		!</p>
   
 	
@@ -32,6 +31,8 @@
 	
   
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <center><%= f.submit "Send" %></center>
   </div>
 <% end %>
+</div>
+

@@ -4,6 +4,7 @@ Photogal::Application.routes.draw do
   get "schools/new"
 
   get "colleges/new"
+  get "tags/new"
 
   #resources :pages
   resources :users #do
@@ -11,6 +12,7 @@ Photogal::Application.routes.draw do
   resources :schools
   resources :dorms
   resources :photos
+  resources :tags
   resources :sessions, :only => [:new, :create, :destroy]
   
   root :to => 'pages#home'

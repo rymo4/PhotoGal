@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  columbia_regex = /\A(([a-zA-Z]{2,3})(\d{4})@columbia.edu)/i
   attr_accessor :password
   
   attr_accessible :first_name, :last_name, :email, :college_id , :password, :password_confirmation, :year, :school_id, :dorm_id
   
-  has_many :photos
+  has_many :photos, :dependent => :destroy
   belongs_to :college
   belongs_to :dorm
   belongs_to :school
@@ -12,7 +13,7 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true, :length   => { :maximum => 30 }
   validates :last_name, :presence => true, :length   => { :maximum => 30 }
   validates :email, :presence => true,
-                    :format     => { :with => email_regex },
+                    :format     => { :with => columbia_regex },
                     :uniqueness => true
   validates :class, :presence => true
   validates :college_id, :presence => true

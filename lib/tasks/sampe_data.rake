@@ -6,6 +6,7 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     make_colleges_with_schools_and_dorms
     make_users
+    make_tags
     make_photos
   end
 end
@@ -13,7 +14,7 @@ end
 def make_users
     admin = User.create!(:first_name => "Ryder",
                          :last_name => "Moody",
-                         :email => "RydTheMoodster@gmail.com",
+                         :email => "rlm2155@columbia.edu",
                          :password => "password",
                          :password_confirmation => "password",
                          :college_id => College.find_by_name('Columbia University').id,
@@ -24,7 +25,7 @@ def make_users
     admin.toggle!(:admin)
     User.create!(:first_name => "Other",
                  :last_name => "User",
-                 :email => "email@gmail.com",
+                 :email => "abc1234@columbia.edu",
                  :password => "password",
                  :password_confirmation => "password",
                  :college_id => College.find_by_name('Columbia University').id,
@@ -68,6 +69,19 @@ def make_colleges_with_schools_and_dorms
   School.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>'JTS')
      
 end
+
+def make_tags
+  Tag.create!(:name=>"Artsy")
+  Tag.create!(:name=>"Social")
+  Tag.create!(:name=>"Sports")
+  Tag.create!(:name=>"Frats")
+  Tag.create!(:name=>"Work")
+  Tag.create!(:name=>"Food")
+  Tag.create!(:name=>"Alcohol")
+  Tag.create!(:name=>"Fun")
+  Tag.create!(:name=>"FML")
+end
+
 
 def make_photos
 

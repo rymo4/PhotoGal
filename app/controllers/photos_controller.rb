@@ -42,7 +42,12 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.xml
   def create
-    @photo = Photo.new(:title=>params[:photo][:title], :comment=>params[:photo][:comment], :user_id=> current_user.id, :image=> params[:photo][:image])
+    @photo = Photo.new(:title=>params[:photo][:title],
+                       :comment=>params[:photo][:comment],
+                       :user_id=> current_user.id, 
+                       :image=> params[:photo][:image], 
+                       :tag_id=>params[:photo][:tag_id]
+                       )
 
     respond_to do |format|
       if @photo.save
