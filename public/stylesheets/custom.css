@@ -116,7 +116,10 @@ p {
   }
 
  
-
+img {
+	padding: 2px;
+	border: 1px solid #999999;
+}
 
 
 /* Navigation */
@@ -143,23 +146,18 @@ p {
 	margin-left: 200px;
 	margin-top: 20px;
 	
-	
 }
 
 
 /* Header styles */
+
 #header {
       clear:both;
       float:left;
       width:100%;
-			background: #B2D1E5;
-
-			
+			background: #B2D1E5;		
   }
-#header {
-	bor/der-bottom:3px solid #6FB7E9;
-	
-}
+
 #header p,
 #header h1,
 #header h2 {
@@ -227,6 +225,7 @@ p {
 /* 2 column left menu settings */
 .leftmenu {
     background:#3C8DC5;
+		
 }
   .leftmenu .colright {
       float:left;
@@ -234,6 +233,8 @@ p {
 	position:relative;
 	left:200px;
       background:#E9F2F9;
+
+
 
   }
   .leftmenu .col1wrap {

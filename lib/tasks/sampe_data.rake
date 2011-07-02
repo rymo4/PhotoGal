@@ -58,7 +58,8 @@ def make_colleges_with_schools_and_dorms
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Nussbaum")
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Broadway")
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"River") 
-  Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Woodbridge") 
+  Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Woodbridge")
+  Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Brownstones")  
   Dorm.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>"Off Campus Housing")  
    
   School.create!(:college_id=>College.find_by_name("Columbia University").id, :name=>'SEAS')
