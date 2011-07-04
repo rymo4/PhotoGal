@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   
   has_many :photos, :dependent => :destroy
   has_many :comments, :dependent => :destroy
+  has_many :notifications
   belongs_to :college
   belongs_to :dorm
   belongs_to :school

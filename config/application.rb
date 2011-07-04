@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+#config.active_record.observers = :comment_observer
+
 module Photogal
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

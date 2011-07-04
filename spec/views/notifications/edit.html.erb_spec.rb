@@ -1,0 +1,20 @@
+require 'spec_helper'
+
+describe "notifications/edit.html.erb" do
+  before(:each) do
+    @notification = assign(:notification, stub_model(Notification,
+      :photo_id => 1,
+      :reciever_id => 1
+    ))
+  end
+
+  it "renders the edit notification form" do
+    render
+
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    assert_select "form", :action => notifications_path(@notification), :method => "post" do
+      assert_select "input#notification_photo_id", :name => "notification[photo_id]"
+      assert_select "input#notification_reciever_id", :name => "notification[reciever_id]"
+    end
+  end
+end

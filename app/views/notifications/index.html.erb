@@ -1,0 +1,24 @@
+<h1>Listing notifications</h1>
+
+<table>
+  <tr>
+    <th>Photo</th>
+    <th></th>
+  </tr>
+
+<% @notifications.each do |notification| %>
+  <tr>
+    <td>
+
+				<%=link_to Comment.find(notification.comment_id).user.first_name, User.find(Comment.find(notification.comment_id).user_id)%> 
+				wrote 
+				<%= link_to truncate(Comment.find(notification.comment_id).comment), Photo.find(Comment.find(notification.comment_id).photo_id) %>
+	
+		</td>
+
+    
+    <td><%= link_to 'Delete', notification, :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

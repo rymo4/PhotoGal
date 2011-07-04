@@ -37,9 +37,12 @@ class CommentsController < ApplicationController
     if signed_in?
       @photo=Photo.find(params[:photo_id])
       @comment = Comment.new(:comment=>params[:comment][:comment], :user_id=>current_user.id, :photo_id=>Photo.find(params[:photo_id]).id)
-
+      
       respond_to do |format|
         if @comment.save
+          unless Photo.find(@comment.photo_id).user_id==current_user.id
+            Notification.create!(:user_id=>Photo.find(@comment.photo_id).user.id, :comment_id=>@comment.id)
+          end
           format.html { redirect_to(@photo) }
         
           format.html { render :action => "new" }

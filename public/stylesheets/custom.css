@@ -1,6 +1,9 @@
 
 
 /* tools */
+.grey {
+	color: #999999;
+}
 .justify {
 	text-align: justify;
 }
@@ -369,7 +372,7 @@ ul.comments {
 ul.comments li{
 	border-top: 1px solid #999999;
 	padding: 5px;
-	backg/round: #FFFFFF;
+	
 	}
 .newcomment {
 	margin: 0 auto;
@@ -378,4 +381,14 @@ ul.comments li{
 }
 .delete {
 	text-align: right;
+	float: right;
+	clear: none;
+	height: 12px;
+}
+.time {
+	text-align: left;
+	
+	clear: none;
+	color: #999999;
+	height: 12px;
 }

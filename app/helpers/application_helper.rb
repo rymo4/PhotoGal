@@ -1,5 +1,28 @@
 module ApplicationHelper
   
+  def name(user)
+    if signed_in?
+      if user.id==current_user.id
+        'You'
+      else
+        user.first_name + " " + user.last_name
+      end
+    end
+  end
+  
+  def punctuate(words)
+    if words.split('').last == "." 
+      words.split('').first.capitalize!.to_s
+    elsif words.split('').last == "?" 
+      words.split('').first.capitalize!.to_s
+    elsif words.split('').last == "!" 
+      words.split('').first.capitalize!.to_s
+    else
+      words + "."
+    end
+    
+  end
+  
   def markdown(text)
     options = [:hard_wrap, :filter_html, :autolink, :no_intraemphasis, :filter_styles, :no_image, :safelink, :strikethrough]
       Redcarpet.new(text, *options).to_html.html_safe

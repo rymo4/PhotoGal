@@ -4,10 +4,11 @@
 			<% if signed_in?%>
       <li><%=link_to 'Upload', upload_path%></li>
       <li><%=link_to 'Sign Out', signout_path, :method => :delete %></li>
-			
+			<% unless current_user.notifications.empty? %>
+				<li> <%= link_to current_user.notifications.count, '/notifications' %></li>
+			<% end %>
 			<% else %>
 			<li><%=link_to 'Sign In', signin_path%></li>
 			<% end %>
-      
   </ul>
 </div>

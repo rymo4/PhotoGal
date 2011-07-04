@@ -7,6 +7,7 @@ class Photo < ActiveRecord::Base
   belongs_to :school
   belongs_to :dorm
   has_many :comments
+  has_many :notifications
   has_one :tag
   
   

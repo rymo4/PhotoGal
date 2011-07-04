@@ -1,4 +1,6 @@
 Photogal::Application.routes.draw do
+  resources :notifications
+
   resources :comments
 
   get "dorms/new"
@@ -7,6 +9,7 @@ Photogal::Application.routes.draw do
 
   get "colleges/new"
   get "tags/new"
+  get "notifications/index"
 
   #resources :pages
   resources :users
