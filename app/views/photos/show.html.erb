@@ -6,22 +6,32 @@
 
 
 
-<p>
-  Taken by <%= link_to User.find(@photo.user_id).first_name, User.find(@photo.user_id) %>.
-</p>
+
 
 
   
 
 <p>
   
-  <%= @photo.comment %>
+  "<%= @photo.comment %>"
 </p>
+<p class="indent">
+	~<%= link_to User.find(@photo.user_id).first_name, User.find(@photo.user_id)%>
+	</p>
 </center>
 	<%if @photo.user_id==current_user.id%>
 		<%= link_to 'Edit', edit_photo_path(@photo) %> 
 		<%= link_to 'Delete', @photo, :confirm => 'Are you sure?', :method => :delete %>
 	<%end%>
+	<ul class="comments">
+	<% @comments.each do |comment| %>
+		<li><p><strong><%= link_to User.find(comment.user_id).first_name, User.find(comment.user_id) %> says: </strong><br> <%=markdown(comment.comment)%></p></li>
+	<% end %>
+	</ul>
+	
+	<%=render 'comments/form'%>
+	
+	
 	
 <%else%>
 <%= render 'shared/signin'%>

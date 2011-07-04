@@ -1,11 +1,12 @@
 class Photo < ActiveRecord::Base
   attr_accessible :user_id, :title, :image, :comment, :tag_id
   
+  
   belongs_to :user
   belongs_to :college
   belongs_to :school
   belongs_to :dorm
-  
+  has_many :comments
   has_one :tag
   
   

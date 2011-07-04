@@ -4,38 +4,25 @@ class UsersController < ApplicationController
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
   
-  # GET /users
-  # GET /users.xml
+ 
   def index
     @users = User.all
-
-    
   end
 
-  # GET /users/1
-  # GET /users/1.xml
   def show
     @user = User.find(params[:id])
     @photos=@user.photos.order("created_at DESC").page(params[:page]).per(20)
     @list="My"
-    
   end
 
-  # GET /users/new
-  # GET /users/new.xml
   def new
     @user = User.new
-
-    
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
 
-  # POST /users
-  # POST /users.xml
   def create
      @user = User.new(params[:user])
      if @user.save
@@ -43,15 +30,18 @@ class UsersController < ApplicationController
        flash[:success] = "Welcome to College Collage!"
        redirect_to @user
      else
-        
-       #flash[:error] = "Fill in everything correctly!"
-       #redirect_to signup_path
-       render 'new'
+        if @user.errors.any?      
+            errors="Please fix the error(s): <ul>"
+            @user.errors.full_messages.each do |msg|
+              errors<<"<il>" + msg +"</il><br>"
+            end 
+        end
+        errors<<"</ul>"
+        flash[:error]=errors.html_safe
+       redirect_to signup_path
      end 
   end
 
-  # PUT /users/1
-  # PUT /users/1.xml
   def update
          @user = User.find(params[:id])
          if @user.update_attributes(params[:user])
@@ -62,8 +52,6 @@ class UsersController < ApplicationController
          end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.xml
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."

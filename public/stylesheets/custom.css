@@ -358,3 +358,22 @@ a:visited {
 .success a {color:#264409;}
 .info a {color:#205791;} 
 
+/* Comments */
+ul.comments {
+	list-style: none;
+	width: 500px;
+	margin: 0 auto;
+	padding:0; 
+	
+}
+ul.comments li{
+	border-top: 1px solid #999999;
+	padding: 5px;
+	backg/round: #FFFFFF;
+	}
+.newcomment {
+	margin: 0 auto;
+	width: 500px;
+	text-align: center;
+	
+}

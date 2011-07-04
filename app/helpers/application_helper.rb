@@ -1,5 +1,10 @@
 module ApplicationHelper
   
+  def markdown(text)
+    options = [:hard_wrap, :filter_html, :autolink, :no_intraemphasis, :filter_styles, :no_image, :safelink, :strikethrough]
+      Redcarpet.new(text, *options).to_html.html_safe
+  end
+  
   def college
     if signed_in?
       College.find(current_user.college_id).name

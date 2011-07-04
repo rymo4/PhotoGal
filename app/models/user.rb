@@ -6,15 +6,18 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :college_id , :password, :password_confirmation, :year, :school_id, :dorm_id
   
   has_many :photos, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
   belongs_to :college
   belongs_to :dorm
   belongs_to :school
   
   validates :first_name, :presence => true, :length   => { :maximum => 30 }
-  validates :last_name, :presence => true, :length   => { :maximum => 30 }
+  validates :last_name, :presence => true, 
+                        :length   => { :maximum => 30 }
   validates :email, :presence => true,
-                    :format     => { :with => columbia_regex },
+                    :format     => { :with => columbia_regex, :message => "is not a college email address" },
                     :uniqueness => true
+                    
   validates :class, :presence => true
   validates :college_id, :presence => true
   validates :dorm_id, :presence => true

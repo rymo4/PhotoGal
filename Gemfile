@@ -5,6 +5,7 @@ gem 'sqlite3', '1.3.3'
 gem "rmagick"
 gem "carrierwave"
 gem 'kaminari'
+gem 'redcarpet'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

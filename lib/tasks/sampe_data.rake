@@ -74,12 +74,17 @@ def make_tags
   Tag.create!(:name=>"Artsy")
   Tag.create!(:name=>"Social")
   Tag.create!(:name=>"Sports")
-  Tag.create!(:name=>"Frats")
+  Tag.create!(:name=>"Greek")
   Tag.create!(:name=>"Work")
   Tag.create!(:name=>"Food")
   Tag.create!(:name=>"Alcohol")
   Tag.create!(:name=>"Fun")
   Tag.create!(:name=>"FML")
+  Tag.create!(:name=>"Clubs")
+  Tag.create!(:name=>"Campus Events")
+  Tag.create!(:name=>"Professors")
+  Tag.create!(:name=>"Studying")
+
 end
 
 

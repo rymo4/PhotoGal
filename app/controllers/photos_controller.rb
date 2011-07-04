@@ -16,6 +16,8 @@ class PhotosController < ApplicationController
   # GET /photos/1.xml
   def show
     @photo = Photo.find(params[:id])
+    @comment = Comment.new(params[:comment]) if signed_in?
+    @comments = @photo.comments
 
     respond_to do |format|
       format.html # show.html.erb
