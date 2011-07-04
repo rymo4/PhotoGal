@@ -68,9 +68,9 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-
+    @photo=Photo.find(@comment.photo_id)
     respond_to do |format|
-      format.html { redirect_to(comments_url) }
+      format.html { redirect_to(@photo) }
     
     end
   end

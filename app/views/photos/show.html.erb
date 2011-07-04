@@ -14,19 +14,31 @@
 <p>
   
   "<%= @photo.comment %>"
+	<%if @photo.user_id==current_user.id%>
+		<%= link_to 'Edit', edit_photo_path(@photo) %> 
+		<%= link_to 'Delete', @photo, :confirm => 'Are you sure?', :method => :delete %>
+	<%end%>
 </p>
 <p class="indent">
 	~<%= link_to User.find(@photo.user_id).first_name, User.find(@photo.user_id)%>
 	</p>
 </center>
-	<%if @photo.user_id==current_user.id%>
-		<%= link_to 'Edit', edit_photo_path(@photo) %> 
-		<%= link_to 'Delete', @photo, :confirm => 'Are you sure?', :method => :delete %>
-	<%end%>
+	
 	<ul class="comments">
 	<% @comments.each do |comment| %>
-		<li><p><strong><%= link_to User.find(comment.user_id).first_name, User.find(comment.user_id) %> says: </strong><br> <%=markdown(comment.comment)%></p></li>
+		<li><p><strong><%= link_to User.find(comment.user_id).first_name, User.find(comment.user_id) %> says: </strong><br> 
+		<%=markdown(comment.comment)%>
+		<div class="delete">
+		<% if comment.user_id==current_user.id || Photo.find(comment.photo_id).user_id==current_user.id%>
+		<%= link_to 'Delete', comment, :method => :delete %>
+		<% end %>
+		</div>
+	
+
+		</p>
+			</li>
 	<% end %>
+	
 	</ul>
 	
 	<%=render 'comments/form'%>
