@@ -2,7 +2,8 @@
   <h2 class="sidebar">Collages</h2>
 	 <ul class="sidebar">
 				<p>
-				<li><%=link_to 'Favorites', '#'%></li>
+				<li><%=link_to 'Favorite Users', relationship_path(current_user)%></li>
+				<li><%=link_to 'Favorite Photos', relationship_path(current_user)%></li>
         <li><%=link_to college, root_path%></li>
 				<h3>Schools</h3>
 				<% schools.each do |school_id|%>

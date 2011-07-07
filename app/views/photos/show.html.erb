@@ -16,7 +16,7 @@
 	~<%= link_to name(User.find(@photo.user_id)), User.find(@photo.user_id)%><span class="grey"><%=" Posted " + time_ago_in_words(@photo.created_at) + " ago."%></span>
 	</p>
 </center>
-	
+	<%= render 'favorite_form' %>
 	<ul class="comments">
 	<% @comments.each do |comment| %>
 		<li><p><strong>

@@ -1,6 +1,9 @@
 Photogal::Application.routes.draw do
-  resources :notifications
+  resources :favorites
 
+  resources :notifications
+  resources :relationships, :only => [:create, :destroy, :show]
+  resources :favorites, :only => [:create, :destroy, :show]
   resources :comments
 
   get "dorms/new"
@@ -12,7 +15,11 @@ Photogal::Application.routes.draw do
   get "notifications/index"
 
   #resources :pages
-  resources :users
+  resources :users do
+      member do
+        get :following, :followers
+      end
+  end
     
   resources :colleges
   resources :schools

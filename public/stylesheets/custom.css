@@ -1,5 +1,4 @@
 
-
 /* tools */
 .grey {
 	color: #999999;
@@ -63,24 +62,24 @@
 }
 /* Text */
 h1 {
-	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-family: 'Redressed', serif;
 	font-size: 50px;
 	line-height: 70px;
 	text-align: center;
 }
 h2 {
-	font-family: 'Raleway', Helvetica, Arial, sans-serif;
-	font-size: 30px;
+	font-family: 'Redressed', serif;
+	font-size: 35px;
 	line-height: 40px;
 }
 h2 {
-	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-family: 'Redressed', serif;
 	font-size: 20px;
 	line-height: 25px;
 }
  
 p {
-	font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+	font-family: 'Redressed', serif;
 	font-size: 15px;
 	line-height: 25px;
 }
@@ -115,7 +114,6 @@ p {
 	border: 2px solid #000000;
 	text-align: center;
 	position: relative;
-	
 }
 
 
@@ -127,7 +125,7 @@ p {
       padding:0;
       border:0;			/* This removes the border around the viewport in old versions of IE */
       width:100%;
-      background: #B2D1E5;
+      background: #000000;
       min-width:600px;    /* Minimum width of layout - remove line if not required */
 						/* The min-width property does not work in old versions of Internet Explorer */
 	font-size:90%;
@@ -148,37 +146,37 @@ img {
 /* Navigation */
 
 #nav {
-	background-color: #3C8DC5;
-	/* top-left rounded corner */
-	
-		-webkit-border-top-left-radius: 10px;
-		-khtml-border-radius-topleft: 10px;	
-		-moz-border-radius-topleft: 10px;
-		border-top-left-radius: 10px;
-	
-	/* top-right rounded corner */
-	
-		-webkit-border-top-right-radius: 10px;
-		-khtml-border-radius-topright: 10px;	
-		-moz-border-radius-topright: 10px;
-		border-top-right-radius: 10px;
-	
+	background-color: #66A1D2;
+	-webkit-border-top-left-radius: 10px;
+	-khtml-border-radius-topleft: 10px;	
+	-moz-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-khtml-border-radius-topright: 10px;	
+	-moz-border-radius-topright: 10px;
+	border-top-right-radius: 10px;
 	padding: 2px 4px;
 	float: left;
-	
-	margin-left: 200px;
-	margin-top: 20px;
-	
+	clear: none;
+	margin-left: -10px;
+	margin-top: 50px;
 }
 
 
 /* Header styles */
 
+
+.logo {
+	border:none;
+	padding: 5px 0 5px 10px;
+	float: left;
+}
+
 #header {
       clear:both;
       float:left;
       width:100%;
-			background: #B2D1E5;		
+			background: #000000;		
   }
 
 #header p,
@@ -248,7 +246,7 @@ img {
 /* 2 column left menu settings */
 
 .leftmenu {
-    background:#3C8DC5;
+    background:#FFFFFF;
 		
 }
   .leftmenu .colright {
@@ -256,7 +254,8 @@ img {
       width:200%;
 	position:relative;
 	left:200px;
-      background:#E9F2F9;
+      background:#DDDDDD;
+			border-left: 2px solid #66A1D2;
 
 
 
@@ -290,8 +289,8 @@ img {
       clear:both;
       float:left;
       width:100%;
-	border-top:3px solid #6FB7E9;;
-	background: #B2D1E5;
+	border-top:3px solid #66A1D2;;
+	background: #000000;
 	position: relative; 
 	bottom: 0;
 	
@@ -334,7 +333,7 @@ h2.sidebar {
 /* Links */
 
 a {
-	color: #006600;
+	color: #66A1D2;
   text-decoration: underline;
 }
 
@@ -345,7 +344,7 @@ a:hover {
 }
 
 a:visited {
-  color: #004400;
+  color: #66A1D2;
 }
 
 
