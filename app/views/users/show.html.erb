@@ -3,6 +3,7 @@
 <center>
 	<h1><%= @user.first_name %> <%= @user.last_name %></h1>
 	<h3><%= college %>, <%= School.find(@user.school_id).name %> <%= @user.year %></h3>
+	<p><%= pluralize(@user.followers.count,  "person") %> following</p>
 </center>
 
 

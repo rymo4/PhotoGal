@@ -20,9 +20,23 @@ class FavoritesController < ApplicationController
   
   def show
     if signed_in?
-      @photos=current_user.favorites
+      photo_ids = %(SELECT photo_id FROM favorites
+                        WHERE user_id = :user_id)
+      @photos= Photo.where("id IN (#{photo_ids})",{ :user_id => current_user.id }).page(params[:page]).per(20)
+      
       @list="Favorites"
     end
   end
+  
+  
+ 
+  def self.followed_by(user)
+      following_ids = %(SELECT followed_id FROM relationships
+                        WHERE follower_id = :user_id)
+      where("user_id IN (#{following_ids})",
+            { :user_id => user })
+  end
+  
+  
   
 end

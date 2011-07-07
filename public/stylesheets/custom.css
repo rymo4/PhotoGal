@@ -62,33 +62,65 @@
 }
 /* Text */
 h1 {
-	font-family: 'Redressed', serif;
-	font-size: 50px;
-	line-height: 70px;
 	text-align: center;
+  font-family: 'Miltonian', serif;
+  font-size: 77px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: none;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: -0.05em;
+  line-height: 1;
 }
 h2 {
 	font-family: 'Redressed', serif;
 	font-size: 35px;
 	line-height: 40px;
 }
-h2 {
+h3 {
 	font-family: 'Redressed', serif;
 	font-size: 20px;
 	line-height: 25px;
 }
  
 p {
+	font-family: 'Goudy Bookletter 1911', serif;
+	letter-spacing: 0.029em;
+	font-size: 15px;
+	line-height: 20px;
+}
+li {
+	font-family: 'Goudy Bookletter 1911', serif;
+	letter-spacing: 0.029em;
+	font-size: 15px;
+	line-height: 20px;
+}
+.special {
 	font-family: 'Redressed', serif;
 	font-size: 15px;
-	line-height: 25px;
+	line-height: 20px;
+	
 }
 
 
 
 
-
 /* PICS */
+#containpic {
+	width: auto;
+	height: auto;
+	
+}
+#heart {
+	floa/t: right;
+	clea/r: none;
+	text-align: right;
+	z-index: 400;
+	
+	margi/n-right:25%;
+	
+}
 .listedpic {
 	float: left;
 	padding: 15px;
@@ -391,3 +423,16 @@ ul.comments li{
 	color: #999999;
 	height: 12px;
 }
+/* SUBMITS */
+input[type="HeartLight_submit"]
+{
+  background:url(./public/images/heartlogolight.png);
+  text-indent: -9999em;
+}
+
+input[type="HeartDark_submit"]
+{
+  background:url(./public/images/heartlogodark.png);
+  text-indent: -9999em;
+}
+

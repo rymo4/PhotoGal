@@ -24,7 +24,7 @@ Photogal::Application.routes.draw do
   resources :colleges
   resources :schools
   resources :dorms
-  resources :photos do
+  resources :photos , {:except => :index} do
     resources :comments
   end
   resources :tags

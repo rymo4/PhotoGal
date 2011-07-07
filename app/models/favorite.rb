@@ -1,12 +1,9 @@
 class Favorite < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :photo
-  
-  
   
   attr_accessible :photo_id
   
-  
+  belongs_to :user
+  has_one :photo
   
   validates :user_id, :presence => true
   validates :photo_id, :presence => true

@@ -1,5 +1,5 @@
 <%= form_for current_user.favorites.build(:photo_id => @photo.id),
              :remote => true do |f| %>
   <div><%= f.hidden_field :photo_id %></div>
-  <div class="actions"><%= f.submit "Favorite" %></div>
+  <div class="actions"><%= f.submit "HeartLight", :type => :image, :src => "/images/heartlogolight.png" %></div>
 <% end %>

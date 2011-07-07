@@ -1,8 +1,10 @@
 <% if signed_in?%>
 <p id="notice"><%= notice %></p>
 <center>
+
 <h1><%= @photo.title %></h1>
 <%= image_tag @photo.image_url.to_s %>
+<%= render 'favorite_form' , :id=>"heart"%>
 
 
 <p>  
@@ -13,10 +15,10 @@
 	<%end%>
 </p>
 <p class="indent">
-	~<%= link_to name(User.find(@photo.user_id)), User.find(@photo.user_id)%><span class="grey"><%=" Posted " + time_ago_in_words(@photo.created_at) + " ago."%></span>
+	~<%= link_to name(User.find(@photo.user_id)), User.find(@photo.user_id)%><span class="grey special"><%=" Posted " + time_ago_in_words(@photo.created_at) + " ago."%></span>
 	</p>
 </center>
-	<%= render 'favorite_form' %>
+	
 	<ul class="comments">
 	<% @comments.each do |comment| %>
 		<li><p><strong>
@@ -34,7 +36,7 @@
 		<% end %>
 		</div>
 		<div class="time">
-			<p>Posted <%=time_ago_in_words(comment.created_at)%> ago.</p>
+			<p class="special">Posted <%=time_ago_in_words(comment.created_at)%> ago.</p>
 		</div>
 	
 

@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :college_id , :password, :password_confirmation, :year, :school_id, :dorm_id
   
   has_many :photos, :dependent => :destroy
+  
+  
   has_many :comments, :dependent => :destroy
   has_many :notifications, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id",

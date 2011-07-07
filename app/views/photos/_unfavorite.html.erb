@@ -1,5 +1,5 @@
 <%= form_for current_user.favorites.find_by_photo_id(@photo),
              :html => { :method => :delete },
              :remote => true do |f| %>
-  <div class="actions"><%= f.submit "Unfavorite" %></div>
+  <div class="actions"><%= f.submit "HeartDark", :type => :image, :src => "/images/heartlogodark.png" %></div>
 <% end %>

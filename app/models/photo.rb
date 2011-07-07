@@ -26,8 +26,8 @@ class Photo < ActiveRecord::Base
   def self.from_users_followed_by(user)
       where(:user_id => user.following.push(user))
   end
+  
   default_scope :order => 'photos.created_at DESC'
-
     
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
 
@@ -39,4 +39,8 @@ class Photo < ActiveRecord::Base
       where("user_id IN (#{following_ids})",
             { :user_id => user })
   end
+  
+  
+  
+  
 end
